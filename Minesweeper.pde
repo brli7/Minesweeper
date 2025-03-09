@@ -1,7 +1,7 @@
 
 import de.bezier.guido.*;
-private final static int NUM_ROWS = 4;
-private final static int NUM_COLS = 4;
+private final static int NUM_ROWS = 25;
+private final static int NUM_COLS = 25;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines = new ArrayList<MSButton>(); //ArrayList of just the minesweeper buttons that are mined
 
@@ -29,13 +29,11 @@ public void setMines()
     int mineCol = (int)(Math.random()*NUM_COLS);
     while(mines.size() < NUM_ROWS*NUM_COLS/6) {
       if(!(mines.contains(buttons[mineRow][mineCol]))) {
-        System.out.println(mineRow + ", " + mineCol);
         mines.add(new MSButton(mineRow, mineCol));
         mineRow = (int)(Math.random()*NUM_ROWS);
         mineCol = (int)(Math.random()*NUM_COLS);
       }
     }
-    System.out.println(mines.size());
 }
 
 public void draw ()
@@ -61,16 +59,11 @@ public boolean isWon()
 }
 public void displayLosingMessage()
 {
-    //noLoop();
-    //System.out.println(width + ", " + height);
     for(int i = 0; i < mines.size(); i++) {
       if(!mines.get(i).isClicked()) {
         mines.get(i).mousePressed();
       }
     }
-    //background(255);
-    //fill(255);
-    //quad(0,0 , 0,height , width,height, width,0);
     textSize(100);
     fill(100,0,0);
     text("lose", 300,300);
@@ -79,7 +72,6 @@ public void displayLosingMessage()
 }
 public void displayWinningMessage()
 {
-    System.out.println("win");
     textSize(100);
     fill(0,255,0);
     text("win", 300,300);
@@ -165,12 +157,12 @@ public class MSButton
     {    
         if( clicked && mines.contains(this) ) {
             fill(255,0,0);
-            displayLosingMessage();
             noLoop();
+            displayLosingMessage();
         }
         if(isWon()) {
-          System.out.println("winn");
           noLoop();
+          displayWinningMessage();
         }
       
       if (flagged)
@@ -189,7 +181,7 @@ public class MSButton
 
         rect(x, y, width, height);
         fill(0);
-        textSize(12);
+        textSize(10);
         text(myLabel,x+width/2,y+height/2);
     }
     public void setLabel(String newLabel)
