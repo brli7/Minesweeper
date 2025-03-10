@@ -1,5 +1,4 @@
 
-import de.bezier.guido.*;
 private final static int NUM_ROWS = 25;
 private final static int NUM_COLS = 25;
 private MSButton[][] buttons; //2d array of minesweeper buttons
