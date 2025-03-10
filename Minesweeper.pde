@@ -175,8 +175,8 @@ public class MSButton
             
         if( clicked && mines.contains(this) ) {
             fill(255,0,0);
-            displayLosingMessage();
             noLoop();
+            displayLosingMessage();
         }
         
 
