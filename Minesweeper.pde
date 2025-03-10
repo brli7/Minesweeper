@@ -139,7 +139,6 @@ public class MSButton
           flagged = !flagged;
           clicked = false;
         } else if (mines.contains(this)) {
-          noLoop();
           displayLosingMessage();
         } else if (countMines(myRow, myCol) > 0) {
           this.setLabel(""+(countMines(myRow, myCol)));
@@ -175,8 +174,8 @@ public class MSButton
             
         if( clicked && mines.contains(this) ) {
             fill(255,0,0);
-            noLoop();
             displayLosingMessage();
+            noLoop();
         }
         
 
