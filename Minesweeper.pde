@@ -68,14 +68,14 @@ public void displayLosingMessage()
     fill(100,0,0);
     text("lose", 300,300);
     fill(255,0,0);
-    //stop();
+    stop();
 }
 public void displayWinningMessage()
 {
     textSize(100);
     fill(0,255,0);
     text("win", 300,300);
-    //stop();
+    stop();
 }
 public boolean isValid(int r, int c)
 {
@@ -139,6 +139,7 @@ public class MSButton
           flagged = !flagged;
           clicked = false;
         } else if (mines.contains(this)) {
+          noLoop();
           displayLosingMessage();
         } else if (countMines(myRow, myCol) > 0) {
           this.setLabel(Integer.toString(countMines(myRow, myCol)));
