@@ -157,11 +157,11 @@ public class MSButton
     {    
         if( clicked && mines.contains(this) ) {
             fill(255,0,0);
-            //noLoop();
+            noLoop();
             displayLosingMessage();
         }
         if(isWon()) {
-          //noLoop();
+          noLoop();
           displayWinningMessage();
         }
       
@@ -175,7 +175,7 @@ public class MSButton
         if( clicked && mines.contains(this) ) {
             fill(255,0,0);
             displayLosingMessage();
-            //noLoop();
+            noLoop();
         }
         
 
