@@ -138,7 +138,7 @@ public class MSButton
         if(mouseButton == RIGHT) {
           flagged = !flagged;
           clicked = false;
-        } else if (mines.contains(this)) {
+        } else if (mines.contains(buttons[myRow][myCol])) {
           displayLosingMessage();
         } else if (countMines(myRow, myCol) > 0) {
           this.setLabel(Integer.toString(countMines(myRow, myCol)));
@@ -155,7 +155,7 @@ public class MSButton
     }
     public void draw () 
     {    
-        if( clicked && mines.contains(this) ) {
+        if( clicked && mines.contains(buttons[myRow][myCol]) ) {
             fill(255,0,0);
             noLoop();
             displayLosingMessage();
@@ -172,7 +172,7 @@ public class MSButton
         else 
             fill( 100 );
             
-        if( clicked && mines.contains(this) ) {
+        if( clicked && mines.contains(buttons[myRow][myCol]t) ) {
             fill(255,0,0);
             displayLosingMessage();
             noLoop();
