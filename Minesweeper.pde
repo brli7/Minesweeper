@@ -1,4 +1,5 @@
 
+import de.bezier.guido.*;
 private final static int NUM_ROWS = 25;
 private final static int NUM_COLS = 25;
 private MSButton[][] buttons; //2d array of minesweeper buttons
@@ -67,14 +68,14 @@ public void displayLosingMessage()
     fill(100,0,0);
     text("lose", 300,300);
     fill(255,0,0);
-    stop();
+    //stop();
 }
 public void displayWinningMessage()
 {
     textSize(100);
     fill(0,255,0);
     text("win", 300,300);
-    stop();
+    //stop();
 }
 public boolean isValid(int r, int c)
 {
@@ -196,6 +197,8 @@ public class MSButton
         return flagged;
     }
 }
+
+
 
 
 
