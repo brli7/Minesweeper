@@ -142,7 +142,7 @@ public class MSButton
           noLoop();
           displayLosingMessage();
         } else if (countMines(myRow, myCol) > 0) {
-          this.setLabel(Integer.toString(countMines(myRow, myCol)));
+          this.setLabel(""+(countMines(myRow, myCol)));
         } else { 
           for(int i = -1; i < 2; i++) {
             for(int e = -1; e < 2; e++) {
